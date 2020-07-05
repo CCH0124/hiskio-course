@@ -4,7 +4,7 @@ PREFIX="${PREFIX:-default}"
 COMMITHASH="${COMMITHASH:- }"
 COMMITLOG="${COMMITLOG:- }"
 IPS=$(hostname -I)
-
+echo "Running"
 cat <<EOF > /var/www/html/index.html
 Hostname is ${PREFIX}_${HOSTNAME}
 Latest Commit Hash is ${PREFIX}_${COMMITHASH}
