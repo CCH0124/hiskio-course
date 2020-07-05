@@ -42,7 +42,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: build docker image
       run: |
-        push cicd/application
+        pushd cicd/application
         make build-image
         popd
         #  test-k8s-minikube:
