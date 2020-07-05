@@ -35,6 +35,16 @@ jobs:
         pushd cicd/application
         make yaml-lint
         popd
+  build:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+    - uses: actions/checkout@v2
+    - name: build docker image
+      run: |
+        push cicd/application
+        make build-image
+        popd
         #  test-k8s-minikube:
         #    runs-on: ubuntu-latest
         #    needs: test
